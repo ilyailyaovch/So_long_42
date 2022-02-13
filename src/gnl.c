@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 15:49:44 by rtracee           #+#    #+#             */
-/*   Updated: 2022/02/13 09:28:06 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/02/13 13:14:19 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	*ft_g_n_l(int fd, char **line)
 	char		*tmp;
 
 	buf = malloc(2);
+	if (buf == NULL)
+		return (NULL);
 	i = 1;
 	str = NULL;
 	*line = ft_strdup("");

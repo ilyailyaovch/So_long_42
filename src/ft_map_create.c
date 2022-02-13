@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:38:18 by rtracee           #+#    #+#             */
-/*   Updated: 2022/02/13 11:09:23 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/02/13 13:16:42 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,8 @@ int	ft_map_processing(char *map, t_data *data)
 	data->width = ft_width(map);
 	fd = open(map, O_RDONLY, 0);
 	data->map = (char **)malloc(sizeof(char *) * (data->height + 1));
+	if (!data->map)
+		return (-1);
 	while (count <= data->height)
 	{
 		data->map[count] = ft_g_n_l(fd, &line);

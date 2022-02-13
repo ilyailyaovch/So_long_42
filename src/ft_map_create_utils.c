@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:47:48 by rtracee           #+#    #+#             */
-/*   Updated: 2022/02/13 10:41:06 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/02/13 13:21:57 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_height(char *map)
 
 	height = 0;
 	fd = open(map, O_RDONLY, 0);
+	if (fd < 0)
+		exit(0);
 	while (ft_gnl(fd, &line) > 0)
 	{
 		free(line);
